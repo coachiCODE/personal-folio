@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/personal-folio/static/js/main.12fef368.chunk.js",
+    "main.js.map": "/personal-folio/static/js/main.12fef368.chunk.js.map",
+    "runtime-main.js": "/personal-folio/static/js/runtime-main.0ee2eb89.js",
+    "runtime-main.js.map": "/personal-folio/static/js/runtime-main.0ee2eb89.js.map",
+    "static/css/2.4be38407.chunk.css": "/personal-folio/static/css/2.4be38407.chunk.css",
+    "static/js/2.a7a8ae9b.chunk.js": "/personal-folio/static/js/2.a7a8ae9b.chunk.js",
+    "static/js/2.a7a8ae9b.chunk.js.map": "/personal-folio/static/js/2.a7a8ae9b.chunk.js.map",
+    "index.html": "/personal-folio/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/personal-folio/static/css/2.4be38407.chunk.css.map",
+    "static/js/2.a7a8ae9b.chunk.js.LICENSE.txt": "/personal-folio/static/js/2.a7a8ae9b.chunk.js.LICENSE.txt",
+    "static/media/be.9c633270.png": "/personal-folio/static/media/be.9c633270.png",
+    "static/media/java_opp.c659b87b.jpeg": "/personal-folio/static/media/java_opp.c659b87b.jpeg",
+    "static/media/me.cad6b44a.jpg": "/personal-folio/static/media/me.cad6b44a.jpg",
+    "static/media/mercedes_proj.bcfbba99.png": "/personal-folio/static/media/mercedes_proj.bcfbba99.png",
+    "static/media/pass.0d855cb2.jpeg": "/personal-folio/static/media/pass.0d855cb2.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ee2eb89.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.a7a8ae9b.chunk.js",
+    "static/js/main.12fef368.chunk.js"
+  ]
+}
