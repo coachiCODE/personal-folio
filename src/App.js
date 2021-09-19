@@ -30,8 +30,8 @@ function App() {
 
   return (
     <MainContentStyled>
-    <div className="App">
     <Router>
+    <div className="App">
       <NavbarComp />
       <Switching>
         <Route path='/' exact component={LandingPage} />
@@ -40,7 +40,6 @@ function App() {
         <Route path='/FolioPage' component={FolioPage} />
         <Route path='/ContactPage' component={ContactPage} />
       </Switching>
-    </Router>
           <div className="theme">
           <div className="light-dark-mode">
               <div className="right-content">
@@ -54,6 +53,7 @@ function App() {
             </div>       
         </div>
     </div>
+    </Router>
     </MainContentStyled>
   );
 }

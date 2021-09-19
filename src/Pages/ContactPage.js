@@ -1,18 +1,43 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import { Form, Col, Row,Button } from 'react-bootstrap';
+import { db } from "../firebase"; 
 
-function ContactPage() {
-    const [validated, setValidated] = useState(false);
-    const handleSubmit = (event) => {
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      setValidated(true);
-    };
+const ContactPage= () => {
 
+  const [Fname, setFname] = useState("");
+  const [Lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoader(true);
+
+    db.collection("contacts")
+      .add({
+        Fname: Fname,
+        Lname: Lname,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        setLoader(false);
+        alert("Your message has been submitted👍");
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
+      });
+
+    setFname("");
+    setLname("");
+    setEmail("");
+    setMessage("");
+  };
+   
     return (
         <ContactPageStyled>
         <div className="safeview">
@@ -22,29 +47,39 @@ function ContactPage() {
                 width="600" height="450" frameBorder="0" style={{border:0}} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>                </div>
                 <div className="contact-sect">
                     <h1>Let's Talk !</h1>
-                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                    <Form noValidate onSubmit={handleSubmit}>
                         <Row>
                             <Col>
-                            <Form.Control className="mb-2" placeholder="First name" />
+                            <Form.Control className="mb-2" placeholder="First name"
+                            value={Fname}
+                            onChange={(e) => setFname(e.target.value)}
+                            />
                             </Col>
                             <Col>
-                            <Form.Control className="mb-2" placeholder="Last name" />
+                            <Form.Control className="mb-2" placeholder="Last name"
+                            value={Lname}
+                            onChange={(e) => setLname(e.target.value)} />
                             </Col>
                         </Row>
                         <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
                             <Form.Label>Email </Form.Label>
-                            <Form.Control type="email" placeholder="name@example.com" />
+                            <Form.Control type="email" placeholder="name@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Write me a message</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
+                            <Form.Control as="textarea" rows={3}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)} />
                         </Form.Group>
                         <Form.Check
                             required
                             label="Agree to terms and conditions"
                             feedback="You must agree before submitting."
                         />
-                        <Button className="mb-2" variant="primary" type="submit">
+                        <Button className="mb-3" variant="primary" type="submit"
+                        style={{ background: loader ? "#ccc" : " #057FFF" }}>
                             Submit
                         </Button>
                     </Form>

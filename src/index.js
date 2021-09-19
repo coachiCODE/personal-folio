@@ -11,7 +11,6 @@ export const DeviceSize = {
   desktop:2024,
 };
 
-
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />

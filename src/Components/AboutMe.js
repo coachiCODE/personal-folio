@@ -96,7 +96,14 @@ const AboutMeStyled = styled.header`
             padding: 1rem 0;
         }
     }
-    @media screen and (max-width: 1400px){
+    @media only screen and (min-width:1024px) and (max-width: 1400px){
+        flex-direction: column;
+        .about-info{
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+    }
+    @media only screen and (max-width: 1400px){
         flex-direction: column;
         .about-info{
             margin-left: 0;
@@ -146,7 +153,10 @@ const AboutMeStyled = styled.header`
     column-gap: 4rem;
     row-gap: 3rem;
     margin: 4rem 0;
-    @media screen and (max-width: 1100px){
+    @media only screen and (max-width: 1100px){
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @media only screen and (max-width: 1400px){
         grid-template-columns: repeat(1, 1fr);
     }
 }

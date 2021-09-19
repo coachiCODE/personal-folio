@@ -64,7 +64,7 @@ export default function ProjectItem({
       <div className="projectItem__info">
           <h3 className="projectItem__title">{title}</h3>
         <p className="projectItem__desc">{desc}</p>
-        <p className="projectItem__web" >Link:<br/>{website}</p>
+        <p className="btn btn-dark projectItem__web" >{website}</p>
       </div>
     </ProjectItemStyles>
   );
